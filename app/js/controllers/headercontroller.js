@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('fantasyApp.controllers.header', ['fantasyApp.services.login'])
-  .controller('HeaderController', ['$scope', '$location', 'loginService', 'angularFire', 'FBURL', 
+  .controller('HeaderController', ['$scope', '$location', 'loginService', 'angularFire', 'FBURL',
     function($scope, $location, loginService, angularFire, FBURL) {
 
       $scope.$on("angularFireAuth:login", function() {
@@ -16,9 +16,13 @@ angular.module('fantasyApp.controllers.header', ['fantasyApp.services.login'])
         {
           "title": "NFL Teams",
           "link": "/nflteams"
+        },
+        {
+          "title": "Leagues",
+          "link": "/leagues"
         }
       ];
-      
+
       $scope.$on('$routeChangeSuccess', function() {
         $scope.navbarEntries.forEach(
           function(data) {
